@@ -5,7 +5,7 @@
         <!-- end navbar  -->
 
         <!-- header  -->
-        <header class="text-center">
+        <header class="text-center" data-aos="fade-down" data-aos-delay="1000">
             <h1>
                 SMAN I JONGGOL
                 <br>
@@ -13,7 +13,7 @@
             <h3>
                 Kampus hijau berbudaya
             </h3>
-            <p class="mt-5">
+            <p>
                 Jl. Sukasirna, Jonggol, Bogor
             </p>
             <router-link to="/details/profile/sejarah" class="btn btn-get-started px-4 mt-4">
@@ -28,7 +28,11 @@
             <section class="section-popular" id="popular">
                 <div class="container">
                     <div class="row">
-                        <div class="col text-center section-popular-heading">
+                        <div 
+                        class="col text-center section-popular-heading" 
+                        data-aos="fade-down"
+                        data-aos-delay="1000"
+                        >
                             <h2>
                                 Berita Terkini 
                             </h2>
@@ -46,7 +50,12 @@
 
                     <div class="section-popular-travel row justify-content-center" v-if="home">
                         <carousel  class="col" :loop="true" :nav="false" :autoplay="true" :margin="20" :autoplayTimeout="5000" :autoplayHoverPause="true" :smartSpeed="1000" :responsive="{100:{items:1},1000:{items:3}}">
-                            <div class="berita-item" v-for="berita in home.data.data.berita" :key="berita.id">
+                            <div class="berita-item" 
+                                v-for="berita in home.data.data.berita" 
+                                :key="berita.id"
+                                data-aos="fade-up"
+                                data-aos-delay="1000"
+                                >
 
                                 <div class="card-travel text-center d-flex flex-column">
                                     <div class="berita-image" v-if="berita.galleries.length > 0">
@@ -85,7 +94,11 @@
             <div class="container">
                 <div class="row">
                     
-                    <div class="col-md-4 text-left">
+                    <div 
+                        class="col-md-4 text-left"
+                        data-aos="fade-right"
+                        data-aos-delay="1000"
+                    >
                         <h2>
                             Studi Alumni
                         </h2>
@@ -97,7 +110,7 @@
 
                     <div class="col-md-8 text-center justify-content-center" v-if="home">
                         <carousel :loop="true" :autoplay="true" :nav="false" :dots="false" :autoplayTimeout="2000" :responsive="{0:{items:3},600:{items:3}, 1000:{items:5}}">
-                            <div v-for="kampus in home.data.data.kampus" :key="kampus.id">
+                            <div v-for="kampus in home.data.data.kampus" :key="kampus.id" data-aos="fade-left" data-aos-delay="1000">
                                 <img v-bind:src="kampus.photo" :alt="'logo' + kampus.name" class="logo-partner justify-content-center">
                             </div>
                         </carousel>
@@ -114,7 +127,11 @@
             <section class="section-testimonial-heading" id="testimonialHeading">
                 <div class="container">
                     <div class="row">
-                        <div class="col text-center">
+                        <div 
+                            class="col text-center"
+                            data-aos="fade-down"
+                            data-aos-delay="1000"
+                        >
                             <h2>Apa Kata Alumni ?</h2>
                             <p>
                                 Moments were giving them
@@ -132,7 +149,7 @@
 
                     <div class="row justify-content-center" v-if="home">
                         <carousel class="alumni-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}">
-                            <div class="alumni-item" v-for="alumni in home.data.data.alumni" :key="alumni.id">
+                            <div class="alumni-item" v-for="alumni in home.data.data.alumni" :key="alumni.id" data-aos="fade-up" data-aos-delay="1000">
                                 <div class="card card-testimonial text-center">
                                     <div class="testimonial-content">
                                         <img :src="alumni.photo" alt="" class="mb-4 rounded-circle ml-auto mr-auto">
@@ -170,7 +187,10 @@
             <section class="section-guru-heading" id="guru">
                 <div class="container">
                     <div class="row">
-                        <div class="col text-center">
+                        <div class="col text-center"
+                            data-aos="fade-down"
+                            data-aos-delay="1000"
+                        >
                             <h2>
                                 Meet Our Talented Teacher
                             </h2>
@@ -187,7 +207,7 @@
 
                     <div class="row justify-content-center" v-if="home">
                         <carousel class="guru-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}">
-                            <div class="guru-item" v-for="guru in home.data.data.guru" :key="guru.id">
+                            <div class="guru-item" v-for="guru in home.data.data.guru" :key="guru.id" data-aos="fade-up" data-aos-delay="1000">
                                 <div class="card card-guru text-center">
                                     <div class="guru-content">
                                         <img :src="guru.photo" alt="" class="mb-4 rounded-circle ml-auto mr-auto">

@@ -21,10 +21,14 @@ npm run lint
 ```
 
 ## Dummy API
-```
+```bash
 npm install -g json-server
 mkdir src/data && cd src/data && touch db.json
-json-server --watch src/data/db.json --port 4000
+npm install -s vue-owl-carousel
+
+# agar beranimasi ketika di scroll
+npm i aos@next
+
 ```
 
 ## Dependency
