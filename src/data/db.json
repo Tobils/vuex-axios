@@ -1,0 +1,24 @@
+{
+    "results": [
+      {
+         "id": "1",
+         "name": "BTC",
+         "price": "1000"
+      },
+      {
+          "id": "2",
+          "name": "LTC",
+          "price": "150"
+      },
+      {
+          "id": "3",
+          "name": "Ethereum",
+          "price": "800" 
+      },
+      {
+          "id": "4",
+          "name": "BCH",
+          "price": "1500"
+      }
+    ]
+}
