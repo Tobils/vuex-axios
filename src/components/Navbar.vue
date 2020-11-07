@@ -2,14 +2,14 @@
 
    <div class="container">
        
-        <b-navbar toggleable="lg" type="light" variant="light">
+        <b-navbar toggleable="lg" type="light" variant="light" class="navbar-smoeray">
             <b-navbar-brand :to="'/'" class="logo-smoeray">
                 <img src="@/assets/logo/logo-smoeray.png" alt="logo smoeray" class="ml-auto mr-auto">
                 <!-- <h4>SMAN 1 JONGGOL</h4> -->
             </b-navbar-brand>
 
             <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle> -->
-            <b-navbar-toggle target="nav-collapse">
+            <b-navbar-toggle target="nav-collapse" class="navbar-collapsed">
                 <template #default="{ expanded }">
                     <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
                     <b-icon v-else icon="chevron-bar-down"></b-icon>
@@ -17,7 +17,7 @@
             </b-navbar-toggle>
 
 
-            <b-collapse id="nav-collapse" is-nav>
+            <b-collapse id="nav-collapse" is-nav class="navbar-items">
                 <b-navbar-nav class="ml-auto">
                     <b-nav-item :to="'/details/berita/all'">Berita</b-nav-item>
                     <b-nav-item-dropdown text="Staff" right>
@@ -39,10 +39,10 @@
                     <b-nav-item href="http://ppdb.sman1jonggol.sch.id" target="_blank">PPDB</b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
-            
+
+            <router-view/>
         </b-navbar>
 
-    <router-view/>
 
     </div>
     <!-- agar router view berfungsi -->
@@ -73,7 +73,15 @@ export default {
     }
 }
 
-.nav-link {
-    padding: 0;
+.navbar-smoeray {
+    .logo-smoeray {
+        margin-left: 10px;
+    }
+
+    .navbar-items,
+    .navbar-collapsed{
+        margin-right: 10px;
+        text-align: right;
+    }
 }
 </style>

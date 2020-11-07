@@ -5,7 +5,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
 
-                    <div class="row" data-aos="fade-up-right" data-aos-delay="500">
+                    <div class="row">
                         <div class="col-12 d-flex align-items-start">
                             <div class="footer-logo">
                                 <router-link to="/"><img src="@/assets/logo/logo-smoeray.png" width="30%" alt="logo-smoeray" class="mb-2"/></router-link>
@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="maps" data-aos="fade-up" data-aos-delay="500">
+                            <div class="maps" data-aos="fade-down" data-aos-delay="500">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.31019905367!2d107.05798665087602!3d-6.48234229528761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69bd5c767f0085%3A0xc65601c455f9ac46!2sSMA%20Negeri%201%20Jonggol!5e0!3m2!1sen!2sid!4v1597459604487!5m2!1sen!2sid" style="border:0" allowfullscreen="" width="100%" height="350" frameborder="0"></iframe>
                             </div>
                         </div>
