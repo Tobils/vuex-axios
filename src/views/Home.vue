@@ -5,7 +5,7 @@
         <!-- end navbar  -->
 
         <!-- header  -->
-        <header class="text-center" data-aos="fade-down" data-aos-delay="1000">
+        <header class="text-center" data-aos="fade-down" data-aos-delay="500">
             <h1>
                 SMAN I JONGGOL
                 <br>
@@ -17,7 +17,7 @@
                 Jl. Sukasirna, Jonggol, Bogor
             </p>
             <router-link to="/details/profile/sejarah" class="btn btn-get-started px-4 mt-4">
-                Selengkapnya
+                Profile
             </router-link>
         </header>
         <!-- end header  -->
@@ -31,7 +31,7 @@
                         <div 
                         class="col text-center section-popular-heading" 
                         data-aos="fade-down"
-                        data-aos-delay="1000"
+                        data-aos-delay="500"
                         >
                             <h2>
                                 Berita Terkini 
@@ -54,7 +54,7 @@
                                 v-for="berita in home.data.data.berita" 
                                 :key="berita.id"
                                 data-aos="fade-up"
-                                data-aos-delay="1000"
+                                data-aos-delay="500"
                                 >
 
                                 <div class="card-travel text-center d-flex flex-column">
@@ -97,7 +97,7 @@
                     <div 
                         class="col-md-4 text-left"
                         data-aos="fade-right"
-                        data-aos-delay="1000"
+                        data-aos-delay="500"
                     >
                         <h2>
                             Studi Alumni
@@ -110,7 +110,7 @@
 
                     <div class="col-md-8 text-center justify-content-center" v-if="home">
                         <carousel :loop="true" :autoplay="true" :nav="false" :dots="false" :autoplayTimeout="2000" :responsive="{0:{items:3},600:{items:3}, 1000:{items:5}}">
-                            <div v-for="kampus in home.data.data.kampus" :key="kampus.id" data-aos="fade-left" data-aos-delay="1000">
+                            <div v-for="kampus in home.data.data.kampus" :key="kampus.id" data-aos="fade-left" data-aos-delay="500">
                                 <img v-bind:src="kampus.photo" :alt="'logo' + kampus.name" class="logo-partner justify-content-center">
                             </div>
                         </carousel>
@@ -130,7 +130,7 @@
                         <div 
                             class="col text-center"
                             data-aos="fade-down"
-                            data-aos-delay="1000"
+                            data-aos-delay="500"
                         >
                             <h2>Apa Kata Alumni ?</h2>
                             <p>
@@ -149,7 +149,7 @@
 
                     <div class="row justify-content-center" v-if="home">
                         <carousel class="alumni-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}">
-                            <div class="alumni-item" v-for="alumni in home.data.data.alumni" :key="alumni.id" data-aos="fade-up" data-aos-delay="1000">
+                            <div class="alumni-item" v-for="alumni in home.data.data.alumni" :key="alumni.id" data-aos="fade-up" data-aos-delay="500">
                                 <div class="card card-testimonial text-center">
                                     <div class="testimonial-content">
                                         <img :src="alumni.photo" alt="" class="mb-4 rounded-circle ml-auto mr-auto">
@@ -166,15 +166,6 @@
                             </div>
                         </carousel>
                     </div>
-                        
-
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <router-link to="/details/kontak/alumni" class="btn btn-get-started px-4 mt-4 mx-1">
-                                Selengkapnya
-                            </router-link>
-                        </div>
-                    </div>
                     
                 </div>
             </section>
@@ -184,12 +175,12 @@
 
         <!-- profile guru  -->
         <div class="data-guru">
-            <section class="section-guru-heading" id="guru">
+            <section class="section-guru-heading mb-3" id="guru">
                 <div class="container">
                     <div class="row">
                         <div class="col text-center"
                             data-aos="fade-down"
-                            data-aos-delay="1000"
+                            data-aos-delay="500"
                         >
                             <h2>
                                 Meet Our Talented Teacher
@@ -206,30 +197,32 @@
                 <div class="container">
 
                     <div class="row justify-content-center" v-if="home">
-                        <carousel class="guru-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}">
-                            <div class="guru-item" v-for="guru in home.data.data.guru" :key="guru.id" data-aos="fade-up" data-aos-delay="1000">
+                        <!-- <carousel class="guru-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}"> -->
+                        <div class="d-flex flex-row align-content-stretch flex-wrap">
+                            <div class="guru-item" v-for="idx in count_guru" :key="idx.id" data-aos="fade-up" data-aos-delay="500">
                                 <div class="card card-guru text-center">
                                     <div class="guru-content">
-                                        <img :src="guru.photo" alt="" class="mb-4 rounded-circle ml-auto mr-auto">
+                                        <img :src="guru[idx-1].photo" alt="" class="mb-4 rounded-circle ml-auto mr-auto">
                                         <h3 class="mb-4">
-                                            {{ guru.name }}
+                                            {{ guru[idx-1].name }}
                                         </h3>
                                     </div>
                                     <hr>
                                     <p class="trip-to mt-2">
-                                        {{ guru.subject }}
+                                        {{ guru[idx-1].subject }}
                                     </p>
                                 </div>
                             </div>
-                        </carousel>
+                        </div>
+                        <!-- </carousel> -->
                     </div>
                         
 
-                    <div class="row">
+                    <div class="row" v-if="count_guru < guru.length">
                         <div class="col-12 text-center">
-                            <router-link to="/details/kontak/alumni" class="btn btn-get-started px-4 mt-4 mx-1">
-                                Selengkapnya
-                            </router-link>
+                            <button @click="loadMore" class="btn btn-get-started px-4 mt-4 mx-1">
+                                Load more
+                            </button>
                         </div>
                     </div>
                     
@@ -252,16 +245,21 @@ import Navbar from '@/components/Navbar'
 
 export default {
     name: 'Home',
+    methods: {
+        loadMore() {
+            this.$store.dispatch('loadMoreDataGuru')
+        }
+    },
     components: {
         Footer,
         Navbar,
         carousel
     },
     mounted(){
-        this.$store.dispatch('fetchHome')
+        this.$store.dispatch('fetchHome');
     },
     computed: mapState([
-        'home'
+        'home','guru','count_guru'
     ])
 }
 </script>
@@ -284,15 +282,16 @@ header {
     p {
         font-size: 22px;
     }
+}
 
-    .btn-get-started {
-        background-color: #F27A30;
+// button 
+.btn-get-started {
+    background-color: #F27A30;
+    color: #ffffff;
+
+    &:hover {
+        background-color: #E26D26;
         color: #ffffff;
-
-        &:hover {
-            background-color: #E26D26;
-            color: #ffffff;
-        }
     }
 }
 
@@ -486,6 +485,8 @@ header {
 }
 // end testimoni alumni 
 
+
+// profile guru 
 .section-guru-content {
     margin-top: -300px;
     padding-bottom: 50px;
@@ -494,8 +495,9 @@ header {
     .card-guru {
         padding: 40px 20px 10px;
         border-radius: 11px;
-        margin-bottom: 20px;
+        margin: 20px;
         min-height: 140px;
+        width: 300px;
     }
 
     .guru-content {
@@ -549,9 +551,6 @@ header {
         }
     }
 }
-
-// profile guru 
-
 // end profile guru 
 
 
