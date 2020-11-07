@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="details">
         <Navbar></Navbar>
         <main>
             <!-- details header -->
@@ -59,4 +59,47 @@ export default {
     margin-top: -70px;
 }
 
+
+
+.section-details-content{
+    margin-top: -210px;
+    min-height: 100vh;
+
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .breadcrumb-item {
+        &.active {
+            font-weight: bold;
+            color: #071c4d;
+        }
+    }
+
+    .card-details {
+        padding: 50px;
+        border-radius: 11px;
+
+        h1 {
+            font-size: 26px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #818181;
+        }
+
+        h3 {
+            font-weight: 300;
+            font-size: 14px;
+            color: #071c4d;
+        }
+    }
+}
 </style>
